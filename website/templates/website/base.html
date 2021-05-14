@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+{% load static %}
+<link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+</head>
+<body>
+
+<body>
+    <header class="jumbotron text-center">
+        <h1>The Boring Web</h1>
+        <p>Welcome neopyte.</p>
+        <nav>
+            <a href="{% url 'website:home' %}" class="btn btn-danger">Home</a>
+            <a href="{% url 'website:games' %}" class="btn btn-info">Games</a>
+            <a href="{% url 'website:posts' %}" class="btn btn-info">Posts</a>
+        </nav>
+    </header>
+    <article class="container">
+        <main class="col-sm-6">
+            {% block main %}
+            {% endblock %}
+        </main>
+        <aside class="col-sm-6">
+            {% load static %}
+            <img src="{% static 'website/images/logo100px.png' %}">
+        </aside>
+    </article>
+    <footer>Esete website é mesmo fixe <br> Esperemos que voltes!</footer>
+</body>
+</html>
